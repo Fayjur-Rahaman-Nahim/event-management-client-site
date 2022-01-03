@@ -7,17 +7,17 @@ const AddPackeges = () => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
         console.log(data);
-        // fetch('', {
-        //     method: 'POST',
-        //     headers: {
-        //         'content-type': 'application/json'
-        //     },
-        //     body: JSON.stringify(data)
-        // })
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         console.log(data);
-        //     })
+        fetch('http://localhost:5000/api/package/create', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+            })
     };
     return (
         <div>
@@ -29,7 +29,7 @@ const AddPackeges = () => {
                     <option value="other">other</option>
                 </select> */}
                 <TextField sx={{ m: 2, width: '75%' }} id="standard-basic" label="package_name" {...register("package_name")} variant="standard" required /> <br />
-                <TextField sx={{ m: 2, width: '75%' }} id="standard-basic" label="image-link" {...register("image-link")} variant="standard" required /> <br />
+                <TextField sx={{ m: 2, width: '75%' }} id="standard-basic" label="image-link" {...register("image_link")} variant="standard" required /> <br />
                 <TextField sx={{ m: 2, width: '75%' }} id="standard-basic" label="description" {...register("description")} variant="standard" required /> <br />
                 <TextField sx={{ m: 2, width: '75%' }} id="standard-basic" label="price" {...register("price")} variant="standard" required /> <br />
                 {/* <label style={{}}>categories</label><br /> */}

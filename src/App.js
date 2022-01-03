@@ -8,6 +8,7 @@ import {
   Routes,
   Route
 } from "react-router-dom";
+import Catering from './components_minhaz/Catering/Catering';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Routes>
           <Route path="/" element={<App />} />
           <Route path="/allPrograms" element={<AllPrograms />} />
+          <Route path="/catering" element={<Catering />} />
           <Route path="dashboard" element={<Dashboard />} >
             <Route path="addPrograms" element={<AddPackeges></AddPackeges>}></Route>
             <Route path="managePrograms" element={<ManagePrograms></ManagePrograms>}></Route>
