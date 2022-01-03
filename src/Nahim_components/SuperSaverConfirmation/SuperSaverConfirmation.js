@@ -32,8 +32,8 @@ const SuperSaverConfirmation = () => {
 
         const OrderInfo = {
             ...data,
-            meal_id: id,
-            meal_name: name,
+            superPackage_id: id,
+            superPackage_names: name,
             status: 'pending',
 
         }
