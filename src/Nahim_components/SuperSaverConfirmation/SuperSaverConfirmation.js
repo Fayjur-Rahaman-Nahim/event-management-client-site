@@ -89,7 +89,7 @@ const SuperSaverConfirmation = () => {
                             </Typography>
                             <Divider />
                             <Typography gutterBottom variant="body5" color="text.secondary">
-                                * All soft copy of photos will be delivered in Event Planner’s Signature Pen drive
+                                *All soft copy of photos will be delivered in Event Planner’s Signature Pen drive
                             </Typography>
 
                         </CardContent>
