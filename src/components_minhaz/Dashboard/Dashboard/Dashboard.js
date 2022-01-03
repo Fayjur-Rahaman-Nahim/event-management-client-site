@@ -26,6 +26,7 @@ function ResponsiveDrawer(props) {
             <Toolbar />
             <Divider />
             <Link style={{ textDecoration: 'none' }} to={`/dashboard/addPrograms`}>Programs Add</Link> <br />
+            <Link style={{ textDecoration: 'none' }} to={`/dashboard/managePrograms`}>Manage Programs</Link> <br />
 
         </div>
     );

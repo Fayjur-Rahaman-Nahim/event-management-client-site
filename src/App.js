@@ -5,16 +5,17 @@ import {
   Routes,
   Route
 } from "react-router-dom";
-import Catering from './components_minhaz/Catering/Catering';
+import AddPackeges from './components_minhaz/AddPackeges/AddPackeges';
+import ManagePrograms from './components_minhaz/ManagePrograms/ManagePrograms';
 function App() {
   return (
     <div className="App">
-      {/* <Dashboard></Dashboard> */}
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<App />} />
           <Route path="dashboard" element={<Dashboard />} >
-            <Route path="addPrograms" element={<Catering></Catering>}></Route>
+            <Route path="addPrograms" element={<AddPackeges></AddPackeges>}></Route>
+            <Route path="managePrograms" element={<ManagePrograms></ManagePrograms>}></Route>
           </Route>
         </Routes>
       </BrowserRouter>
