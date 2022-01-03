@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Container, Nav, Navbar } from 'react-bootstrap';
-
+import { DropdownButton, Dropdown } from 'react-bootstrap'
 const Appbar = () => {
     return (
         <div>
@@ -15,8 +15,17 @@ const Appbar = () => {
                     <Navbar.Collapse className="justify-content-end">
                         <Nav className="me-2">
                             <Nav.Link as={Link} to="/">Home</Nav.Link>
+                            <DropdownButton
+                                variant="dark"
+                                title="Packages"
+                                id="input-group-dropdown-1"
+                            >
+                                <Dropdown.Item className='bg-dark' href="#"><Nav.Link as={Link} to="/packages" >Photoshoot</Nav.Link></Dropdown.Item>
+                                <Dropdown.Item className='bg-dark' href="#"><Nav.Link as={Link} to="/packages" >Catering</Nav.Link></Dropdown.Item>
+                                <Dropdown.Item className='bg-dark' href="#"><Nav.Link as={Link} to="/packages" >Flower</Nav.Link></Dropdown.Item>
+
+                            </DropdownButton>
                             <Nav.Link as={Link} to="/dashboard">Dashboard</Nav.Link>
-                            <Nav.Link as={Link} to="/packages">Packages</Nav.Link>
                             <Nav.Link as={Link} to="/gallery">Gallery</Nav.Link>
                         </Nav>
                         <Navbar.Text className="me-2">
