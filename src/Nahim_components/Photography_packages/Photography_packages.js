@@ -13,9 +13,9 @@ const Photography_packages = () => {
     }, [])
     return (
         <div className='mt-5 pt-5 image-2' >
-            <Typography gutterBottom variant="h4" color="text.secondary" component="div" >
-                --------------- Super Saver ----------------
-            </Typography>
+            <div className='w-75 mx-auto bg-light'><Typography gutterBottom variant="h4" color="text.secondary" component="div" >
+                --------------- <span className='fw-bold'>SUPER SAVER</span> ----------------
+            </Typography></div>
             <Container maxWidth="lg">
                 <Grid container spacing={2}>
                     {

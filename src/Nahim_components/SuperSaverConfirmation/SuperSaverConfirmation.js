@@ -50,7 +50,7 @@ const SuperSaverConfirmation = () => {
         <div className="mt-5 pt-5">
 
             <Row lg={2} xs={1} className="mx-auto">
-                <Col >
+                {/* <Col >
                     <Card>
                         <CardContent style={{ height: '140px' }}>
                             <Typography gutterBottom variant="h7" component="div" >
@@ -94,7 +94,7 @@ const SuperSaverConfirmation = () => {
 
                         </CardContent>
                     </Card>
-                </Col>
+                </Col> */}
                 <Col className="px-5">
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <h1 className="text-danger fw-bold">Booking Confirmation</h1>
