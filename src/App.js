@@ -1,24 +1,42 @@
 
+import logo from './logo.svg';
+import './App.css';
+import Home from './Nahim_components/Home/Home';
+import Photography_packages from './Nahim_components/Photography_packages/Photography_packages';
+import Appbar from './Nahim_components/Appbar/Appbar';
+import SuperSaverConfirmation from './Nahim_components/SuperSaverConfirmation/SuperSaverConfirmation';
+import Galleries from './Nahim_components/Galleries/Galleries';
+
+
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 import Login from './componentsEmon/authentications/Login';
 import Register from './componentsEmon/authentications/Register';
 
+
 function App() {
 
   return (
-    <>
+
+    <div className="App">
+
       <BrowserRouter>
-        <ul className="d-flex justify-content-center pt-3">
+        <Appbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/packages" element={<Photography_packages />} />
+          <Route path="/superSaver/:key" element={<SuperSaverConfirmation />} />
+          <Route path="/gallery" element={<Galleries />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          {/* <ul className="d-flex justify-content-center pt-3">
           <li className="px-2"><Link to="/login"> Login</Link></li>
           <li  className="px-2"><Link to="/register"> Register</Link></li>
-        </ul>
-        <Routes>
-          <Route path="/" element={<><h1> Hello world</h1></>} />
-          <Route path="/login" element={<Login/>} />
-          <Route path="/register" element={<Register/>} />
+        </ul> */}
+
         </Routes>
       </BrowserRouter>
-    </>
+    </div>
+
   );
 }
 export default App;
