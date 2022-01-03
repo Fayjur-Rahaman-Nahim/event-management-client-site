@@ -1,11 +1,20 @@
 import React from 'react';
+import { Container, Dropdown, DropdownButton, Nav, Navbar } from 'react-bootstrap';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
-import { Container, Nav, Navbar } from 'react-bootstrap';
-import { DropdownButton, Dropdown } from 'react-bootstrap'
+import { logOut } from '../../componentsEmon/state/actions/userActions';
 const Appbar = () => {
+    const dispatch = useDispatch();
+    const userLogin = useSelector((state) => state.userLogin);
+    const { userInfo } = userLogin ? userLogin : {};
+    const navigate = useNavigate();
+    const handleLogOut = () => {
+        dispatch(logOut())
+        navigate('/')
+    }
     return (
         <div>
-            <Navbar ollapseOnSelect expand="lg" bg="black" variant="dark" className="d-flex" fixed="top" >
+            <Navbar expand="lg" bg="black" variant="dark" className="d-flex" fixed="top" >
                 <Container >
                     <Navbar.Brand href="#home">
 
@@ -28,15 +37,15 @@ const Appbar = () => {
                             <Nav.Link as={Link} to="/dashboard">Dashboard</Nav.Link>
                             <Nav.Link as={Link} to="/gallery">Gallery</Nav.Link>
                         </Nav>
-                        <Navbar.Text className="me-2">
-                            Signed in as: <a href="#login"></a>
-                        </Navbar.Text>
+                        {!userInfo?.email && <Navbar.Text className="me-2">
+                            Signed in as: <Link to="/login">Login </Link>
+                        </Navbar.Text>}
 
                         <Navbar.Text>
-                            {/* {
-                                user.email ? <button onClick={handleLogOut} className=" btn btn-danger">Logout <i class="fas fa-sign-out-alt"></i></button> :
-                                    <Nav.Link as={Link} to="/login" ><i class="fas fa-sign-in-alt"></i> Login</Nav.Link>
-                            } */}
+                            {
+                                userInfo?.email ? <button onClick={handleLogOut} className=" btn btn-danger">Logout <i className="fas fa-sign-out-alt"></i></button> :
+                                    <Nav.Link as={Link} to="/register" ><i className="fas fa-sign-in-alt"></i> Register</Nav.Link>
+                            }
                         </Navbar.Text>
                     </Navbar.Collapse>
                 </Container>

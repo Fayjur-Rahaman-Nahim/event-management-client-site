@@ -33,7 +33,7 @@ const Login = () => {
                     {error}
                 </ErrorMessage>}
                 {loading && <Loading className="my-2" />}
-                <form onSubmit={handleSubmit(onSubmit)} className="d-block">
+                <form onSubmit={handleSubmit(onSubmit)} className="d-block text-start">
                     <br />
                     <div className="col-lg-5 d-block m-auto">
                         <label htmlFor="orofile-photo">Email</label><br />
