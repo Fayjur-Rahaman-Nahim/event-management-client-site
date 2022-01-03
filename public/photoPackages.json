@@ -1,0 +1,46 @@
+[
+    {
+        "key": "01",
+        "name": "SUPER SAVER 1",
+        "price": "12,500",
+        "photographer": "1",
+        "duration": "4",
+        "pictures": "Unlimited",
+        "edited": "100",
+        "print": "4R",
+        "matte": "100"
+    },
+    {
+        "key": "02",
+        "name": "SUPER SAVER 2",
+        "price": "15,000",
+        "photographer": "2",
+        "duration": "4",
+        "pictures": "Unlimited",
+        "edited": "100",
+        "print": "4R",
+        "matte": "100"
+    },
+    {
+        "key": "03",
+        "name": "SUPER SAVER 3",
+        "price": "20,000",
+        "photographer": "3",
+        "duration": "4",
+        "pictures": "Unlimited",
+        "edited": "100",
+        "print": "12L",
+        "matte": "100"
+    },
+    {
+        "key": "04",
+        "name": "SUPER SAVER 4",
+        "price": "30,000",
+        "photographer": "4",
+        "duration": "5",
+        "pictures": "Unlimited",
+        "edited": "150",
+        "print": "20L",
+        "matte": "125"
+    }
+]
