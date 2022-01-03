@@ -37,14 +37,14 @@ const Appbar = () => {
                             <Nav.Link as={Link} to="/dashboard">Dashboard</Nav.Link>
                             <Nav.Link as={Link} to="/gallery">Gallery</Nav.Link>
                         </Nav>
-                        {!userInfo?.email && <Navbar.Text className="me-2">
-                            Signed in as: <Link to="/login">Login </Link>
+                        {userInfo?.email && <Navbar.Text className="me-2">
+                            Signed in as:
                         </Navbar.Text>}
 
                         <Navbar.Text>
                             {
                                 userInfo?.email ? <button onClick={handleLogOut} className=" btn btn-danger">Logout <i className="fas fa-sign-out-alt"></i></button> :
-                                    <Nav.Link as={Link} to="/register" ><i className="fas fa-sign-in-alt"></i> Register</Nav.Link>
+                                    <Nav.Link as={Link} to="/login" ><i className="fas fa-sign-in-alt"></i> Login</Nav.Link>
                             }
                         </Navbar.Text>
                     </Navbar.Collapse>
