@@ -5,12 +5,16 @@ import { useForm } from 'react-hook-form';
 const AddPackeges = () => {
 
     const { register, handleSubmit, reset } = useForm();
+    const userInfo = window.localStorage.getItem('userInfo') && JSON.parse(window.localStorage.getItem('userInfo'));
+    console.log(userInfo);
     const onSubmit = data => {
         console.log(data);
+        data.email = userInfo.email;
         fetch('http://localhost:5000/api/package/create', {
             method: 'POST',
             headers: {
-                'content-type': 'application/json'
+                'content-type': 'application/json',
+                'authorization': `Bearer ${userInfo.token}`
             },
             body: JSON.stringify(data)
         })
