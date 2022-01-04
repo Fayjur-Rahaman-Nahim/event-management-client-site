@@ -16,18 +16,29 @@ import ConfirmOrder from './components_minhaz/ConfirmOrder/ConfirmOrder';
 import ManageAllOrders from './components_minhaz/Dashboard/Dashboard/ManageAllOrders/ManageAllOrders';
 import PrivateRoute from './components_minhaz/PrivateRoute/PrivateRoute';
 
+// import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import './App.css';
+import Galleries from './Nahim_components/Galleries/Galleries';
+import Home from './Nahim_components/Home/Home';
+import PhotographyPackages from './Nahim_components/PhotographyPackages/PhotographyPackages';
+import SuperSaverConfirmation from './Nahim_components/SuperSaverConfirmation/SuperSaverConfirmation';
+import Appbar from './Nahim_components/Appbar/Appbar';
 
 function App() {
 
   return (
 
     <div className="App">
+
       <BrowserRouter>
-        <ul className="d-flex justify-content-center pt-3">
-          <li className="px-2"><Link to="/login"> Login</Link></li>
-          <li className="px-2"><Link to="/register"> Register</Link></li>
-        </ul>
+        <Appbar />
         <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/packages" element={<PhotographyPackages />} />
+          <Route path="/superSaver/:key" element={<SuperSaverConfirmation />} />
+          <Route path="/gallery" element={<Galleries />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
           <Route path="/" element={<App />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
@@ -42,7 +53,10 @@ function App() {
           </Route>
         </Routes>
       </BrowserRouter>
+
     </div>
+
+
   );
 }
 export default App;

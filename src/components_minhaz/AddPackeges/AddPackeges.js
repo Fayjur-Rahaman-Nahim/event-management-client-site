@@ -9,7 +9,7 @@ const AddPackeges = () => {
     const onSubmit = data => {
         console.log(data);
         data.email = userInfo.email;
-        fetch('http://localhost:5000/api/package/create', {
+        fetch('https://sleepy-stream-15565.herokuapp.com/api/package/create', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
