@@ -1,10 +1,10 @@
 import { Container, Grid, Typography } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import SuperPackage from '../SuperPackage/SuperPackage';
-import './Photography_packages.css'
+import './Photography_packages.css';
 
 
-const Photography_packages = () => {
+const PhotographyPackages = () => {
     const [superPackages, setSuperPackages] = useState([]);
     useEffect(() => {
         fetch("./photoPackages.json")
@@ -29,4 +29,4 @@ const Photography_packages = () => {
     );
 };
 
-export default Photography_packages;
+export default PhotographyPackages;

@@ -1,16 +1,15 @@
 
-import logo from './logo.svg';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
-import Home from './Nahim_components/Home/Home';
-import Photography_packages from './Nahim_components/Photography_packages/Photography_packages';
-import Appbar from './Nahim_components/Appbar/Appbar';
-import SuperSaverConfirmation from './Nahim_components/SuperSaverConfirmation/SuperSaverConfirmation';
-import Galleries from './Nahim_components/Galleries/Galleries';
-
-
-import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 import Login from './componentsEmon/authentications/Login';
 import Register from './componentsEmon/authentications/Register';
+import Appbar from './Nahim_components/Appbar/Appbar';
+import Galleries from './Nahim_components/Galleries/Galleries';
+import Home from './Nahim_components/Home/Home';
+import PhotographyPackages from './Nahim_components/Photography_packages/PhotographyPackages';
+import SuperSaverConfirmation from './Nahim_components/SuperSaverConfirmation/SuperSaverConfirmation';
+
+
 
 
 function App() {
@@ -23,7 +22,7 @@ function App() {
         <Appbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/packages" element={<Photography_packages />} />
+          <Route path="/packages" element={<PhotographyPackages />} />
           <Route path="/superSaver/:key" element={<SuperSaverConfirmation />} />
           <Route path="/gallery" element={<Galleries />} />
           <Route path="/login" element={<Login />} />
@@ -35,6 +34,7 @@ function App() {
 
         </Routes>
       </BrowserRouter>
+  
     </div>
 
   );
