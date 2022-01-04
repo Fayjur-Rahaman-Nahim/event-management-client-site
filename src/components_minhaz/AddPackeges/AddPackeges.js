@@ -1,9 +1,8 @@
-import { Button, MenuItem, TextField } from '@mui/material';
+import { Button, TextField } from '@mui/material';
 import React from 'react';
 import { useForm } from 'react-hook-form';
 
 const AddPackeges = () => {
-
     const { register, handleSubmit, reset } = useForm();
     const userInfo = window.localStorage.getItem('userInfo') && JSON.parse(window.localStorage.getItem('userInfo'));
     const onSubmit = data => {
