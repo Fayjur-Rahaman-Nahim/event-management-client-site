@@ -9,7 +9,6 @@ import {
   BrowserRouter,
   Routes,
   Route,
-  Link
 } from "react-router-dom";
 import Catering from './components_minhaz/Catering/Catering';
 import ConfirmOrder from './components_minhaz/ConfirmOrder/ConfirmOrder';
