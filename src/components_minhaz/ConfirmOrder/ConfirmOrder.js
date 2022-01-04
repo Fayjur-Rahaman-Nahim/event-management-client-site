@@ -9,6 +9,8 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import { Divider, Grid } from '@mui/material';
+import Appbar from '../../Nahim_components/Appbar/Appbar';
+import Footer from '../../Nahim_components/Footer/Footer';
 
 const ConfirmOrder = () => {
     const { id } = useParams();
@@ -30,7 +32,7 @@ const ConfirmOrder = () => {
     }, [])
     let newPackage;
     if (products) {
-        newPackage = products?.find(product => product?.id == `${id}`);
+        newPackage = products?.find(product => product?._id == `${id}`);
 
     }
     // useEffect(()=>{
@@ -73,51 +75,51 @@ const ConfirmOrder = () => {
         //     })
     };
     return (
-        <div>
-            <div className="mt-5 pt-5">
 
-                <Row lg={2} xs={1} className="mx-auto">
-                    {/* <Grid container spacing={2}> */}
-                    {/* <Grid item xs={12} md={5}> */}
-                    <Col className="px-5">
-                        <img width="100%" src={newPackage?.image_link} alt="" />
-                        <Typography sx={{ fontWeight: 400 }} variant="h2" gutterBottom component="div">
-                            {newPackage?.package_name}
-                        </Typography>
-                        <Typography sx={{ fontWeight: 400, fontSize: 15 }} variant="caption" gutterBottom component="div">
-                            {newPackage?.description}
-                        </Typography>
-                        <Typography sx={{ fontWeight: 400 }} variant="h3" gutterBottom component="div">
-                            BDT: {newPackage?.price} Tk
-                        </Typography>
-                    </Col>
-                    {/* </Grid> */}
-                    <Col className="px-5">
-                        <form onSubmit={handleSubmit(onSubmit)}>
-                            <h1 className="text-danger fw-bold">Booking Confirmation</h1>
-                            <div className="form-floating mb-3">
-                                <input defaultValue={''} {...register("name")} type="name" className="form-control" id="floatingInput" readOnly />
-                                <label htmlfor="floatingInput">Name</label>
-                            </div>
-                            <div className="form-floating mb-3">
-                                <input defaultValue={''} {...register("email")} type="email" className="form-control" id="floatingEmail" readOnly />
-                                <label htmlfor="floatingEmail">Email</label>
-                            </div>
-                            <div className="form-floating mb-3">
-                                <input {...register("address")} type="text" className="form-control" id="floatingAddress" placeholder="Address" />
-                                <label htmlfor="floatingAddress">Address</label>
-                            </div>
-                            <div className="form-floating mb-3">
-                                <input {...register("number")} type="text" className="form-control" id="floatingPhone" placeholder="Phone Number" />
-                                <label htmlfor="floatingPhone">Phone Number</label>
-                            </div>
-                            <input type="submit" className="btn btn-outline-danger form-control" value="Confirm Order" />
-                        </form>
-                    </Col>
-                </Row>
 
-            </div >
-        </div>
+        <div className="mt-5 pt-5">
+            <Appbar></Appbar>
+            <Row lg={2} xs={1} className="mx-auto">
+                {/* <Grid container spacing={2}> */}
+                {/* <Grid item xs={12} md={5}> */}
+                <Col className="px-5">
+                    <img width="100%" src={newPackage?.image_link} alt="" />
+                    <Typography sx={{ fontWeight: 400 }} variant="h2" gutterBottom component="div">
+                        {newPackage?.package_name}
+                    </Typography>
+                    <Typography sx={{ fontWeight: 400, fontSize: 15 }} variant="caption" gutterBottom component="div">
+                        {newPackage?.description}
+                    </Typography>
+                    <Typography sx={{ fontWeight: 400 }} variant="h3" gutterBottom component="div">
+                        BDT: {newPackage?.price} Tk
+                    </Typography>
+                </Col>
+                {/* </Grid> */}
+                <Col className="px-5">
+                    <form onSubmit={handleSubmit(onSubmit)}>
+                        <h1 className="text-danger fw-bold">Booking Confirmation</h1>
+                        <div className="form-floating mb-3">
+                            <input defaultValue={''} {...register("name")} type="name" className="form-control" id="floatingInput" readOnly />
+                            <label htmlfor="floatingInput">Name</label>
+                        </div>
+                        <div className="form-floating mb-3">
+                            <input defaultValue={''} {...register("email")} type="email" className="form-control" id="floatingEmail" readOnly />
+                            <label htmlfor="floatingEmail">Email</label>
+                        </div>
+                        <div className="form-floating mb-3">
+                            <input {...register("address")} type="text" className="form-control" id="floatingAddress" placeholder="Address" />
+                            <label htmlfor="floatingAddress">Address</label>
+                        </div>
+                        <div className="form-floating mb-3">
+                            <input {...register("number")} type="text" className="form-control" id="floatingPhone" placeholder="Phone Number" />
+                            <label htmlfor="floatingPhone">Phone Number</label>
+                        </div>
+                        <input type="submit" className="btn btn-outline-danger form-control" value="Confirm Order" />
+                    </form>
+                </Col>
+            </Row>
+            <Footer></Footer>
+        </div >
     );
 };
 

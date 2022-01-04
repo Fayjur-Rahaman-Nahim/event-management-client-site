@@ -67,7 +67,7 @@ const Register = () => {
         </ErrorMessage>}
         {loading && <Loading className="my-2" />}
         <form onSubmit={handleSubmit(onSubmit)} className="d-block m-auto">
-          <div className="col-lg-5 d-block m-auto">
+          <div className="col-lg-5 d-block m-auto text-start">
             <label htmlFor="orofile-photo">Name</label><br />
             <input className="mt-2 d-block" type="text"{...register("name", { required: true, minLength: 0 })} placeholder="Name" required />
           </div>

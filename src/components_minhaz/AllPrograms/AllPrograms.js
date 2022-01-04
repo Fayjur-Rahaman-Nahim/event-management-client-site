@@ -1,6 +1,8 @@
-import { Button, CircularProgress, Container, Grid, Paper } from '@mui/material';
+import { Button, Container, Grid, Paper } from '@mui/material';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Appbar from '../../Nahim_components/Appbar/Appbar';
+import Footer from '../../Nahim_components/Footer/Footer';
 
 const AllPrograms = () => {
     const [isLoading, setIsLoading] = useState(true);
@@ -32,6 +34,7 @@ const AllPrograms = () => {
     }
     return (
         <div>
+            <Appbar />
             <Container>
                 {/* {isLoading && <CircularProgress />} */}
                 <h2>Our programs</h2>
@@ -49,6 +52,7 @@ const AllPrograms = () => {
                     }
                 </Grid>
             </Container>
+            <Footer />
         </div>
     );
 };
