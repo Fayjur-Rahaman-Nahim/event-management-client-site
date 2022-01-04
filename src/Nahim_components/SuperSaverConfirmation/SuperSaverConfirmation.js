@@ -24,7 +24,7 @@ const SuperSaverConfirmation = () => {
         fetch(`https://lit-meadow-17656.herokuapp.com/meals/${key}`)
             .then(res => res.json())
             .then(data => setSuperPackage(data))
-    }, []);
+    }, [key, setSuperPackage]);
 
     const onSubmit = data => {
         const id = superPackage.key;
