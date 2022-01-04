@@ -3,23 +3,26 @@ import {
 } from "react-router-dom";
 import './App.css';
 import Home from './Nahim_components/Home/Home';
-import Galleries from './Nahim_components/Galleries/Galleries';
 import Login from './componentsEmon/authentications/Login';
 import Register from './componentsEmon/authentications/Register';
-// import Footer from './Nahim_components/Footer/Footer';
-import Dashboard from './components_minhaz/Dashboard/Dashboard/Dashboard';
 import AddPackeges from './components_minhaz/AddPackeges/AddPackeges';
 import AllPrograms from './components_minhaz/AllPrograms/AllPrograms';
 import Catering from './components_minhaz/Catering/Catering';
 import ConfirmOrder from './components_minhaz/ConfirmOrder/ConfirmOrder';
+import Dashboard from './components_minhaz/Dashboard/Dashboard/Dashboard';
 import ManageAllOrders from './components_minhaz/Dashboard/Dashboard/ManageAllOrders/ManageAllOrders';
 import ManagePrograms from './components_minhaz/ManagePrograms/ManagePrograms';
+import PrivateRoute from './components_minhaz/PrivateRoute/PrivateRoute';
+import Appbar from './Nahim_components/Appbar/Appbar';
+import Galleries from './Nahim_components/Galleries/Galleries';
+import Home from './Nahim_components/Home/Home';
+import PhotographyPackages from './Nahim_components/PhotographyPackages/PhotographyPackages';
+import SuperSaverConfirmation from './Nahim_components/SuperSaverConfirmation/SuperSaverConfirmation';
 import Appbar from './Nahim_components/Appbar/Appbar';
 import './App.css';
 import PhotographyPackages from './Nahim_components/PhotographyPackages/PhotographyPackages';
 import SuperSaverConfirmation from './Nahim_components/SuperSaverConfirmation/SuperSaverConfirmation';
 import PrivateRoute from "./components_minhaz/PrivateRoute/PrivateRoute";
-
 function App() {
   return (
 
@@ -45,9 +48,7 @@ function App() {
             <Route path="managePrograms" element={<ManagePrograms></ManagePrograms>}></Route>
           </Route>
         </Routes>
-        {/* <Footer /> */}
       </BrowserRouter>
-
     </div>
   );
 }

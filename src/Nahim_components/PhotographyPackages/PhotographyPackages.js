@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react';
 import SuperPackage from '../SuperPackage/SuperPackage';
 import './PhotographyPackages.css'
 
-
 const PhotographyPackages = () => {
     const [superPackages, setSuperPackages] = useState([]);
     useEffect(() => {
