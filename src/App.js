@@ -15,14 +15,9 @@ import ManagePrograms from './components_minhaz/ManagePrograms/ManagePrograms';
 import PrivateRoute from './components_minhaz/PrivateRoute/PrivateRoute';
 import Appbar from './Nahim_components/Appbar/Appbar';
 import Galleries from './Nahim_components/Galleries/Galleries';
-import Home from './Nahim_components/Home/Home';
 import PhotographyPackages from './Nahim_components/PhotographyPackages/PhotographyPackages';
 import SuperSaverConfirmation from './Nahim_components/SuperSaverConfirmation/SuperSaverConfirmation';
-import Appbar from './Nahim_components/Appbar/Appbar';
 import './App.css';
-import PhotographyPackages from './Nahim_components/PhotographyPackages/PhotographyPackages';
-import SuperSaverConfirmation from './Nahim_components/SuperSaverConfirmation/SuperSaverConfirmation';
-import PrivateRoute from "./components_minhaz/PrivateRoute/PrivateRoute";
 function App() {
   return (
 
