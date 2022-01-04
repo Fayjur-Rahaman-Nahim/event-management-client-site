@@ -1,10 +1,10 @@
 import './App.css';
 import Home from './Nahim_components/Home/Home';
-import Appbar from './Nahim_components/Appbar/Appbar';
+// import Appbar from './Nahim_components/Appbar/Appbar';
 import Galleries from './Nahim_components/Galleries/Galleries';
 import Login from './componentsEmon/authentications/Login';
 import Register from './componentsEmon/authentications/Register';
-import Footer from './Nahim_components/Footer/Footer';
+// import Footer from './Nahim_components/Footer/Footer';
 import Dashboard from './components_minhaz/Dashboard/Dashboard/Dashboard';
 import AddPackeges from './components_minhaz/AddPackeges/AddPackeges';
 import ManagePrograms from './components_minhaz/ManagePrograms/ManagePrograms';
@@ -30,7 +30,7 @@ function App() {
     <div className="App">
 
       <BrowserRouter>
-        <Appbar />
+        {/* <Appbar /> */}
         <Routes>
           <Route path="/" element={<Home />} />
           {/* <Route path="/packages" element={<PhotographyPackages />} /> */}
@@ -49,7 +49,7 @@ function App() {
             <Route path="managePrograms" element={<ManagePrograms></ManagePrograms>}></Route>
           </Route>
         </Routes>
-        <Footer />
+        {/* <Footer /> */}
       </BrowserRouter>
 
     </div>

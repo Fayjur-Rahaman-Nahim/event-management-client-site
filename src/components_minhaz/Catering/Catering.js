@@ -1,6 +1,8 @@
 import { Button, CircularProgress, Container, Grid, Paper } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import Appbar from '../../Nahim_components/Appbar/Appbar';
+import Footer from '../../Nahim_components/Footer/Footer';
 
 const Catering = () => {
     const [packages, setPackages] = useState([]);
@@ -34,7 +36,8 @@ const Catering = () => {
         navigate(`/confirmOrder/${id}`)
     }
     return (
-        <div>
+        <div className="mt-5 pt-5">
+            <Appbar />
             <Container>
                 {isLoading && <CircularProgress />}
                 <h2>Lets explore products and accessories</h2>
@@ -52,6 +55,7 @@ const Catering = () => {
                     }
                 </Grid>
             </Container>
+            <Footer />
         </div>
     );
 };

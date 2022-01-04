@@ -2,6 +2,8 @@ import { Container, Typography } from '@mui/material';
 import React from 'react';
 import { useEffect, useState } from 'react';
 import Row from 'react-bootstrap/Row'
+import Appbar from '../Appbar/Appbar';
+import Footer from '../Footer/Footer';
 import Gallery from '../Gallery/Gallery';
 import GalleryCatering from '../GalleryCatering/GalleryCatering';
 import GalleryFlowerDeco from '../GalleryFlowerDeco/GalleryFlowerDeco';
@@ -28,7 +30,7 @@ const Galleries = () => {
     }, [])
     return (
         <div className='mt-5 pt-5 image'>
-
+            <Appbar />
             <Container maxWidth="lg">
                 <div className='w-75 mx-auto bg-light rounded-pill'><Typography gutterBottom variant="h4" color="text.secondary" component="div" >
                     --------------- <span className='fw-bold'>Photoshoot</span> ----------------
@@ -67,6 +69,7 @@ const Galleries = () => {
                     }
                 </Row>
             </Container>
+            <Footer />
         </div>
     );
 };
