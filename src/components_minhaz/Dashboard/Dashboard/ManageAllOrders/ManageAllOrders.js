@@ -6,42 +6,14 @@ const ManageAllOrders = () => {
     const [isShipped, setIsShipped] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
     useEffect(() => {
-        fetch('https://aqueous-citadel-84780.herokuapp.com/allOrders')
-            .then(res => res.json())
-            .then(data => {
-                setOrders(data)
-                setIsLoading(false)
-            })
+
     }, [isShipped])
     const handleShipped = id => {
-        fetch(`https://aqueous-citadel-84780.herokuapp.com/orders/${id}`, {
-            method: 'PUT',
-            headers: { 'content-type': 'application/json' },
-            body: JSON.stringify({ status: 'shipped' })
-        })
-            .then(res => res.json())
-            .then(data => {
-                if (data.modifiedCount) {
-                    alert('change status to shipped');
-                    setIsShipped(true);
-                }
-            });
+
     }
 
     const handleDelete = id => {
-        const proceed = window.confirm('are you sure,you want to delete the items');
-        if (proceed) {
-            fetch(`https://aqueous-citadel-84780.herokuapp.com/orders/${id}`, {
-                method: 'DELETE'
-            })
-                .then(res => res.json())
-                .then(data => {
-                    if (data.deletedCount) {
-                        alert('order deleted successfully')
-                        setIsShipped(true);
-                    }
-                })
-        }
+
     }
     return (
         <div>

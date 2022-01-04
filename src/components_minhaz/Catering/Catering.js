@@ -13,21 +13,33 @@ const Catering = () => {
     const { name } = useParams();
     // console.log(userInfo.email)
     // console.log(name);
+    // useEffect(() => {
+    //     fetch('/fakedata.json', {
+    //         method: 'GET',
+    //         headers: {
+    //             'content-Type': 'application/json',
+    //             'authorization': `Bearer ${userInfo?.token}`
+    //         },
+    //         // body: JSON.stringify({ email: userInfo?.email })
+    //     })
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             setPackages(data)
+    //             setIsLoading(false)
+    //         })
+    // }, []);
+    // console.log(userInfo)
     useEffect(() => {
-        fetch('/fakedata.json', {
+        fetch('https://sleepy-stream-15565.herokuapp.com/api/package/packages', {
             method: 'GET',
             headers: {
-                'content-Type': 'application/json',
+                'Content-Type': 'application/json',
                 'authorization': `Bearer ${userInfo?.token}`
-            },
-            // body: JSON.stringify({ email: userInfo?.email })
+            }
         })
-            .then(res => res.json())
-            .then(data => {
-                setPackages(data)
-                setIsLoading(false)
-            })
-    }, []);
+        .then(res => res.json())
+        .then(data => setPackages(data))
+    }, [userInfo?.token])
     const catering = packages.filter(program => program.categories == `${name}`);
     // program.categories == `${name}  `
     // console.log(catering)
@@ -43,13 +55,13 @@ const Catering = () => {
                 <h2>Lets explore products and accessories</h2>
                 <Grid sx={{ my: 2 }} container spacing={4}>
                     {
-                        packages.map(product => <Grid key={product.id} item xs={12} md={4}>
+                        catering.map(product => <Grid key={product.id} item xs={12} md={4}>
                             <Paper sx={{ p: 2 }} elevation={3} >
                                 <img style={{ width: '100%', height: '200px' }} src={product.image_link} alt="" />
                                 <h2>{product.package_name}</h2>
                                 <p>{product.description.slice(0, 60)}</p>
                                 <h2>price: {product.price}</h2>
-                                <Button variant="contained" onClick={() => handleProductBuy(product.id)}>Book now</Button>
+                                <Button variant="contained" onClick={() => handleProductBuy(product._id)}>Book now</Button>
                             </Paper>
                         </Grid>)
                     }

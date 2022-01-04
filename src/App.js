@@ -2,6 +2,7 @@ import {
   BrowserRouter, Route, Routes
 } from "react-router-dom";
 import './App.css';
+import Home from './Nahim_components/Home/Home';
 import Login from './componentsEmon/authentications/Login';
 import Register from './componentsEmon/authentications/Register';
 import AddPackeges from './components_minhaz/AddPackeges/AddPackeges';
@@ -17,16 +18,18 @@ import Galleries from './Nahim_components/Galleries/Galleries';
 import Home from './Nahim_components/Home/Home';
 import PhotographyPackages from './Nahim_components/PhotographyPackages/PhotographyPackages';
 import SuperSaverConfirmation from './Nahim_components/SuperSaverConfirmation/SuperSaverConfirmation';
-
-
+import Appbar from './Nahim_components/Appbar/Appbar';
+import './App.css';
+import PhotographyPackages from './Nahim_components/PhotographyPackages/PhotographyPackages';
+import SuperSaverConfirmation from './Nahim_components/SuperSaverConfirmation/SuperSaverConfirmation';
+import PrivateRoute from "./components_minhaz/PrivateRoute/PrivateRoute";
 function App() {
-
   return (
 
     <div className="App">
 
       <BrowserRouter>
-      <Appbar />
+        <Appbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/packages" element={<PhotographyPackages />} />
