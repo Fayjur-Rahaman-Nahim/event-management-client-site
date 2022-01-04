@@ -1,6 +1,8 @@
 import { Button, CircularProgress, Container, Grid, Paper } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import Appbar from '../../Nahim_components/Appbar/Appbar';
+import Footer from '../../Nahim_components/Footer/Footer';
 
 const Catering = () => {
     const [packages, setPackages] = useState([]);
@@ -34,24 +36,26 @@ const Catering = () => {
         navigate(`/confirmOrder/${id}`)
     }
     return (
-        <div>
+        <div className="mt-5 pt-5">
+            <Appbar />
             <Container>
                 {isLoading && <CircularProgress />}
                 <h2>Lets explore products and accessories</h2>
                 <Grid sx={{ my: 2 }} container spacing={4}>
                     {
-                        packages.map(product => <Grid key={product.id} item xs={12} md={4}>
+                        catering.map(product => <Grid key={product.id} item xs={12} md={4}>
                             <Paper sx={{ p: 2 }} elevation={3} >
                                 <img style={{ width: '100%', height: '200px' }} src={product.image_link} alt="" />
                                 <h2>{product.package_name}</h2>
                                 <p>{product.description.slice(0, 60)}</p>
                                 <h2>price: {product.price}</h2>
-                                <Button variant="contained" onClick={() => handleProductBuy(product.id)}>Book now</Button>
+                                <Button variant="contained" onClick={() => handleProductBuy(product._id)}>Book now</Button>
                             </Paper>
                         </Grid>)
                     }
                 </Grid>
             </Container>
+            <Footer />
         </div>
     );
 };
