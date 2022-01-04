@@ -11,22 +11,39 @@ const Catering = () => {
     const { name } = useParams();
     // console.log(userInfo.email)
     // console.log(name);
+    // useEffect(() => {
+    //     fetch('/fakedata.json', {
+    //         method: 'GET',
+    //         headers: {
+    //             'content-Type': 'application/json',
+    //             'authorization': `Bearer ${userInfo?.token}`
+    //         },
+    //         // body: JSON.stringify({ email: userInfo?.email })
+    //     })
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             setPackages(data)
+    //             setIsLoading(false)
+    //         })
+    // }, []);
+    // console.log(userInfo)
     useEffect(() => {
-        fetch('/fakedata.json', {
-            method: 'GET',
-            headers: {
-                'content-Type': 'application/json',
-                'authorization': `Bearer ${userInfo?.token}`
-            },
-            // body: JSON.stringify({ email: userInfo?.email })
-        })
+        fetch(`https://sleepy-stream-15565.herokuapp.com/api/package/packages`)
+            // ,
+            //     {
+            //         method: 'GET',
+            //         headers: {
+            //             'content-type': 'application/json',
+            //             'authorization': `Bearer ${userInfo.token}`
+            //         },
+            //     }
+            // )
             .then(res => res.json())
-            .then(data => {
-                setPackages(data)
-                setIsLoading(false)
-            })
-    }, []);
-    const catering = packages.filter(program => program.categories == `${name}`);
+            .then(data => setPackages(data))
+
+    }, [])
+    console.log(packages);
+    // const catering = packages.filter(program => program.categories == `${name}`);
     // program.categories == `${name}  `
     // console.log(catering)
 
