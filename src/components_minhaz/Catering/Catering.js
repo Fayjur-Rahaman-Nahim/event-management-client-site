@@ -30,21 +30,16 @@ const Catering = () => {
     // }, []);
     // console.log(userInfo)
     useEffect(() => {
-        fetch(`https://sleepy-stream-15565.herokuapp.com/api/package/packages`)
-            // ,
-            //     {
-            //         method: 'GET',
-            //         headers: {
-            //             'content-type': 'application/json',
-            //             'authorization': `Bearer ${userInfo.token}`
-            //         },
-            //     }
-            // )
-            .then(res => res.json())
-            .then(data => setPackages(data))
-
-    }, [])
-    console.log(packages);
+        fetch('https://sleepy-stream-15565.herokuapp.com/api/package/packages', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'authorization': `Bearer ${userInfo?.token}`
+            }
+        })
+        .then(res => res.json())
+        .then(data => setPackages(data))
+    }, [userInfo?.token])
     const catering = packages.filter(program => program.categories == `${name}`);
     // program.categories == `${name}  `
     // console.log(catering)
