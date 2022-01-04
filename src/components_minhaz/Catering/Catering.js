@@ -12,20 +12,17 @@ const Catering = () => {
     // console.log(userInfo.email)
     // console.log(name);
     useEffect(() => {
-        fetch('/fakedata.json', {
+        fetch('http://localhost:5000/api/package/packages', {
             method: 'GET',
             headers: {
-                'content-Type': 'application/json',
+                'Content-Type': 'application/json',
                 'authorization': `Bearer ${userInfo?.token}`
-            },
-            // body: JSON.stringify({ email: userInfo?.email })
+            }
         })
-            .then(res => res.json())
-            .then(data => {
-                setPackages(data)
-                setIsLoading(false)
-            })
-    }, []);
+        .then(res => res.json())
+        .then(data => console.log(data))
+    }, [userInfo?.token])
+    console.log(userInfo?.token)
     const catering = packages.filter(program => program.categories == `${name}`);
     // program.categories == `${name}  `
     // console.log(catering)

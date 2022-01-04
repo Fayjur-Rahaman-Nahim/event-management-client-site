@@ -1,36 +1,44 @@
+import { useEffect } from 'react';
+import {
+  BrowserRouter, Route, Routes
+} from "react-router-dom";
 import './App.css';
 import Login from './componentsEmon/authentications/Login';
 import Register from './componentsEmon/authentications/Register';
-import Dashboard from './components_minhaz/Dashboard/Dashboard/Dashboard';
 import AddPackeges from './components_minhaz/AddPackeges/AddPackeges';
-import ManagePrograms from './components_minhaz/ManagePrograms/ManagePrograms';
 import AllPrograms from './components_minhaz/AllPrograms/AllPrograms';
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-} from "react-router-dom";
 import Catering from './components_minhaz/Catering/Catering';
 import ConfirmOrder from './components_minhaz/ConfirmOrder/ConfirmOrder';
+import Dashboard from './components_minhaz/Dashboard/Dashboard/Dashboard';
 import ManageAllOrders from './components_minhaz/Dashboard/Dashboard/ManageAllOrders/ManageAllOrders';
+import ManagePrograms from './components_minhaz/ManagePrograms/ManagePrograms';
 import PrivateRoute from './components_minhaz/PrivateRoute/PrivateRoute';
-
-// import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import './App.css';
+import Appbar from './Nahim_components/Appbar/Appbar';
 import Galleries from './Nahim_components/Galleries/Galleries';
 import Home from './Nahim_components/Home/Home';
 import PhotographyPackages from './Nahim_components/PhotographyPackages/PhotographyPackages';
 import SuperSaverConfirmation from './Nahim_components/SuperSaverConfirmation/SuperSaverConfirmation';
-import Appbar from './Nahim_components/Appbar/Appbar';
 
 function App() {
-
+  const token = window?.localStorage?.getItem('userInfo') && JSON.parse(window.localStorage.getItem('userInfo'))?.token;
+  useEffect(() => {
+    fetch('http://localhost:5000/api/package/packages', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'authorization': `Bearer ${token}`
+        }
+    })
+    .then(res => res.json())
+    .then(data => console.log(data))
+}, [token])
   return (
 
     <div className="App">
 
       <BrowserRouter>
         <Appbar />
+        <Catering/>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/packages" element={<PhotographyPackages />} />
