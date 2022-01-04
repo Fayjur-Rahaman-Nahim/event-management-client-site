@@ -12,7 +12,7 @@ const Catering = () => {
     // console.log(userInfo.email)
     // console.log(name);
     useEffect(() => {
-        fetch('http://localhost:5000/api/package/packages', {
+        fetch('https://sleepy-stream-15565.herokuapp.com/api/package/packages', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
