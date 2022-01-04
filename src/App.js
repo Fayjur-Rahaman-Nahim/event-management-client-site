@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import {
   BrowserRouter, Route, Routes
 } from "react-router-dom";
@@ -20,25 +19,12 @@ import PhotographyPackages from './Nahim_components/PhotographyPackages/Photogra
 import SuperSaverConfirmation from './Nahim_components/SuperSaverConfirmation/SuperSaverConfirmation';
 
 function App() {
-  const token = window?.localStorage?.getItem('userInfo') && JSON.parse(window.localStorage.getItem('userInfo'))?.token;
-  useEffect(() => {
-    fetch('http://localhost:5000/api/package/packages', {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-            'authorization': `Bearer ${token}`
-        }
-    })
-    .then(res => res.json())
-    .then(data => console.log(data))
-}, [token])
   return (
 
     <div className="App">
 
       <BrowserRouter>
         <Appbar />
-        <Catering/>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/packages" element={<PhotographyPackages />} />
