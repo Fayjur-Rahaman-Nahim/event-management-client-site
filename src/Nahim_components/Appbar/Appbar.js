@@ -24,7 +24,7 @@ const Appbar = () => {
                     <Navbar.Collapse className="justify-content-end">
                         <Nav className="me-2">
                             <Nav.Link as={Link} to="/">Home</Nav.Link>
-                            <DropdownButton
+                            {/* <DropdownButton
                                 variant="dark"
                                 title="Packages"
                                 id="input-group-dropdown-1"
@@ -33,18 +33,19 @@ const Appbar = () => {
                                 <Dropdown.Item className='bg-dark' href="#"><Nav.Link as={Link} to="/packages" >Catering</Nav.Link></Dropdown.Item>
                                 <Dropdown.Item className='bg-dark' href="#"><Nav.Link as={Link} to="/packages" >Flower</Nav.Link></Dropdown.Item>
 
-                            </DropdownButton>
+                            </DropdownButton> */}
+                            <Nav.Link as={Link} to="/programs">Packages</Nav.Link>
                             <Nav.Link as={Link} to="/dashboard">Dashboard</Nav.Link>
                             <Nav.Link as={Link} to="/gallery">Gallery</Nav.Link>
                         </Nav>
-                        {!userInfo?.email && <Navbar.Text className="me-2">
-                            Signed in as: <Link to="/login">Login </Link>
+                        {userInfo?.email && <Navbar.Text className="me-2">
+                            Signed in as: {userInfo.name}
                         </Navbar.Text>}
 
                         <Navbar.Text>
                             {
                                 userInfo?.email ? <button onClick={handleLogOut} className=" btn btn-danger">Logout <i className="fas fa-sign-out-alt"></i></button> :
-                                    <Nav.Link as={Link} to="/register" ><i className="fas fa-sign-in-alt"></i> Register</Nav.Link>
+                                    <Nav.Link as={Link} to="/login" ><i className="fas fa-sign-in-alt"></i> Login</Nav.Link>
                             }
                         </Navbar.Text>
                     </Navbar.Collapse>
