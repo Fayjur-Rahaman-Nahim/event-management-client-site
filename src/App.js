@@ -28,8 +28,9 @@ function App() {
           <Route path="/" element={<App />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/allPrograms" element={<AllPrograms />} />
-          <Route path="/catering" element={<Catering />} />
+          <Route path="/programs" element={<AllPrograms />} />
+          <Route path="/programs/:name" element={<Catering />} />
+          <Route path="/packages/catering" element={<Catering />} />
           <Route path="dashboard" element={<Dashboard />} >
             <Route path="addPrograms" element={<AddPackeges></AddPackeges>}></Route>
             <Route path="managePrograms" element={<ManagePrograms></ManagePrograms>}></Route>

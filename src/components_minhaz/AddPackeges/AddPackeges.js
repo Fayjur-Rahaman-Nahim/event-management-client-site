@@ -6,7 +6,6 @@ const AddPackeges = () => {
 
     const { register, handleSubmit, reset } = useForm();
     const userInfo = window.localStorage.getItem('userInfo') && JSON.parse(window.localStorage.getItem('userInfo'));
-    console.log(userInfo);
     const onSubmit = data => {
         console.log(data);
         data.email = userInfo.email;
@@ -20,6 +19,10 @@ const AddPackeges = () => {
         })
             .then(res => res.json())
             .then(data => {
+                if (data._id) {
+                    alert('data inserted successfully');
+                    reset();
+                }
                 console.log(data);
             })
     };
