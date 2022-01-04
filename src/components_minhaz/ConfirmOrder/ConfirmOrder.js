@@ -17,19 +17,25 @@ const ConfirmOrder = () => {
     // const { user } = useAuth();
     const userInfo = window?.localStorage?.getItem('userInfo') && JSON?.parse(window?.localStorage?.getItem('userInfo'));
     const navigate = useNavigate();
-    const [products, setProduct] = useState({});
+    const [products, setProduct] = useState([]);
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
     useEffect(() => {
-        fetch('/fakedata.json')
+        fetch('https://raw.githubusercontent.com/1Emonislam/event-management-client-side/minhaz/public/fakedata.json')
             .then(res => res.json())
             .then(data => {
                 console.log(data);
                 setProduct(data)
             })
     }, [])
-    const newPackage = products?.find(product => product?.id == `${id}`);
-    console.log(newPackage);
+    let newPackage;
+    if (products) {
+        newPackage = products?.find(product => product?.id == `${id}`);
+
+    }
+    // useEffect(()=>{
+    //     const newPackage = products?.find(product => product?.id == `${id}`);
+    // },[])
     // useEffect(() => {
     //     fetch('./fakedata.json', {
     //         method: 'GET',
@@ -73,18 +79,18 @@ const ConfirmOrder = () => {
                 <Row lg={2} xs={1} className="mx-auto">
                     {/* <Grid container spacing={2}> */}
                     {/* <Grid item xs={12} md={5}> */}
-                    {/* <Col className="px-5">
-                        <img width="100%" src={newPackage.image_link} alt="" />
+                    <Col className="px-5">
+                        <img width="100%" src={newPackage?.image_link} alt="" />
                         <Typography sx={{ fontWeight: 400 }} variant="h2" gutterBottom component="div">
-                            {newPackage.package_name}
+                            {newPackage?.package_name}
                         </Typography>
                         <Typography sx={{ fontWeight: 400, fontSize: 15 }} variant="caption" gutterBottom component="div">
-                            {newPackage.description}
+                            {newPackage?.description}
                         </Typography>
                         <Typography sx={{ fontWeight: 400 }} variant="h3" gutterBottom component="div">
-                            BDT: {newPackage.price} Tk
+                            BDT: {newPackage?.price} Tk
                         </Typography>
-                    </Col> */}
+                    </Col>
                     {/* </Grid> */}
                     <Col className="px-5">
                         <form onSubmit={handleSubmit(onSubmit)}>

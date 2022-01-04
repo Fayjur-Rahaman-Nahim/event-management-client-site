@@ -1,11 +1,11 @@
 import React from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
 
-const PrivateRoute = ({ children }) => {
+const PrivateRoute = ({ children, ...rest }) => {
     // const { user, isLoading } = useAuth();
     const userInfo = window?.localStorage?.getItem('userInfo') && JSON?.parse(window?.localStorage?.getItem('userInfo'));
     let location = useLocation();
-    // console.log(user);
+    console.log(userInfo);
     // if (isLoading) {
     //     return 'loading'
     // }

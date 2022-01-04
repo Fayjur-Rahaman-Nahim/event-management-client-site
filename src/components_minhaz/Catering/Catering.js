@@ -40,7 +40,7 @@ const Catering = () => {
                 <h2>Lets explore products and accessories</h2>
                 <Grid sx={{ my: 2 }} container spacing={4}>
                     {
-                        packages.map(product => <Grid key={product._id} item xs={12} md={4}>
+                        packages.map(product => <Grid key={product.id} item xs={12} md={4}>
                             <Paper sx={{ p: 2 }} elevation={3} >
                                 <img style={{ width: '100%', height: '200px' }} src={product.image_link} alt="" />
                                 <h2>{product.package_name}</h2>
