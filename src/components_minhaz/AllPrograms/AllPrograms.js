@@ -34,7 +34,7 @@ const AllPrograms = () => {
         <div>
             <Container>
                 {/* {isLoading && <CircularProgress />} */}
-                <h2>Lets explore products and accessories</h2>
+                <h2>Our programs</h2>
                 <Grid sx={{ my: 2 }} container spacing={4}>
                     {
                         programsItem.map(product => <Grid key={product.id} item xs={12} md={6}>
@@ -42,7 +42,7 @@ const AllPrograms = () => {
                                 <img style={{ width: '100%', height: '300px' }} src={product.image} alt="" />
                                 <h2>{product.name}</h2>
                                 {/* <p>{product.description.slice(0, 60)}</p> */}
-                                <h2>price: {product.price}</h2>
+                                {/* <h2>price: {product.price}</h2> */}
                                 <Button variant="contained" onClick={() => handleProductBuy(product.name)}>check our packages</Button>
                             </Paper>
                         </Grid>)

@@ -4,35 +4,34 @@ import { useNavigate, useParams } from 'react-router-dom';
 
 const Catering = () => {
     const [packages, setPackages] = useState([]);
+    const { id } = useParams();
     const [isLoading, setIsLoading] = useState(true);
-    const userInfo = window.localStorage.getItem('userInfo') && JSON.parse(window.localStorage.getItem('userInfo'));
+    const userInfo = window?.localStorage?.getItem('userInfo') && JSON?.parse(window?.localStorage?.getItem('userInfo'));
     const navigate = useNavigate();
     const { name } = useParams();
+    // console.log(userInfo.email)
     // console.log(name);
     useEffect(() => {
-        fetch('http://localhost:5000/api/package/packages', {
-            methods: 'GET',
+        fetch('/fakedata.json', {
+            method: 'GET',
             headers: {
-                'Content-Type': 'application/json',
-                'authorization': `Bearer ${userInfo.token}` //ei token ta local storage te store kora ache sekhan theke niben
-            }
+                'content-Type': 'application/json',
+                'authorization': `Bearer ${userInfo?.token}`
+            },
+            // body: JSON.stringify({ email: userInfo?.email })
         })
             .then(res => res.json())
             .then(data => {
-
                 setPackages(data)
                 setIsLoading(false)
             })
     }, []);
-    console.log(packages);
-
-
     const catering = packages.filter(program => program.categories == `${name}`);
     // program.categories == `${name}  `
-    console.log(catering)
+    // console.log(catering)
 
     const handleProductBuy = id => {
-        navigate(`/placeOrder/${id}`)
+        navigate(`/confirmOrder/${id}`)
     }
     return (
         <div>
@@ -47,7 +46,7 @@ const Catering = () => {
                                 <h2>{product.package_name}</h2>
                                 <p>{product.description.slice(0, 60)}</p>
                                 <h2>price: {product.price}</h2>
-                                <Button variant="contained" onClick={() => handleProductBuy(product._id)}>buy now</Button>
+                                <Button variant="contained" onClick={() => handleProductBuy(product.id)}>Book now</Button>
                             </Paper>
                         </Grid>)
                     }

@@ -1,6 +1,7 @@
 [
     {
         "package_name": "super saver 1",
+        "id": 1,
         "image_link": "https://i.ibb.co/HC0SZYY/irina-HP9-d-GIQEik-unsplash.jpg",
         "description": "very attractive to look at",
         "price": 450,
@@ -8,6 +9,7 @@
     },
     {
         "package_name": "super saver 2",
+        "id": 2,
         "image_link": "https://i.ibb.co/kG4YJSK/viviana-rishe-y-Rz-Kmpto-TL0-unsplash.jpg",
         "description": "aesthetic in vibe ",
         "price": 350,

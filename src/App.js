@@ -12,6 +12,9 @@ import {
   Link
 } from "react-router-dom";
 import Catering from './components_minhaz/Catering/Catering';
+import ConfirmOrder from './components_minhaz/ConfirmOrder/ConfirmOrder';
+import ManageAllOrders from './components_minhaz/Dashboard/Dashboard/ManageAllOrders/ManageAllOrders';
+import PrivateRoute from './components_minhaz/PrivateRoute/PrivateRoute';
 
 
 function App() {
@@ -29,10 +32,12 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/programs" element={<AllPrograms />} />
+          <Route path="/confirmOrder/:id" element={<ConfirmOrder />} />
           <Route path="/programs/:name" element={<Catering />} />
           <Route path="/packages/catering" element={<Catering />} />
           <Route path="dashboard" element={<Dashboard />} >
             <Route path="addPrograms" element={<AddPackeges></AddPackeges>}></Route>
+            <Route path="manageAllOrders" element={<ManageAllOrders></ManageAllOrders>}></Route>
             <Route path="managePrograms" element={<ManagePrograms></ManagePrograms>}></Route>
           </Route>
         </Routes>
