@@ -1,7 +1,7 @@
 import { Container, Grid, Typography } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import SuperPackage from '../SuperPackage/SuperPackage';
-import './Photography_packages.css';
+import './PhotographyPackages.css';
 
 
 const PhotographyPackages = () => {
